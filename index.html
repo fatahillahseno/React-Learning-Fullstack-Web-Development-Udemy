@@ -26,9 +26,24 @@
         return <h1>Hello World!</h1>;
       }
 
+      // Greeting components
+      function Greeting() {
+        return <h2>Welcome to Learning JSX</h2>;
+      }
+
+      // Description components
+      function Description() {
+        return <p>JSX allows you to write HTML in Javascript</p>;
+      }
       const container = document.getElementById("myDiv");
       const root = ReactDOM.createRoot(container);
-      root.render(<Hello />);
+      root.render(
+        <div>
+          <Hello />
+          <Greeting />
+          <Description />
+        </div>
+      );
     </script>
   </body>
 </html>
