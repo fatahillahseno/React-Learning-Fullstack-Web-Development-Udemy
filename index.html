@@ -27,7 +27,8 @@
         // penggunaan kurung kurawal, {} digunakan untuk menuliskan javascript expression
         return (
           <h1>
-            Hello {props.firstName} {props.lastName}
+            Hello {props.firstName} {props.lastName}! You are{" "}
+            {new Date().getFullYear() - parseInt(props.birthYear)} years old
           </h1>
         );
       }
@@ -53,11 +54,17 @@
       const root = ReactDOM.createRoot(container);
       // default value yang ditentukan bisa ditimpa ketika memanggil react component
       // dengan argument yang baru
+      let user = "John";
       root.render(
         <div>
-          <Hello firstName="John" lastName="Doe" />
-          <Hello firstName="Mark" lastName="Doe" />
-          <Greeting />
+          <Hello firstName="John" lastName="Doe" birthYear="1998" />
+          <Hello firstName="Mark" lastName="Doe" birthYear="1999" />
+
+          {/* penggunaan js expression di dalam render, akan menghasilkan apabila user adalh John, jika bukan john makaa akan memberikaan sapaan terhadap Guest */}
+          {user == "John" ? <Greeting username={user} /> : <Greeting />}
+
+          {/* akan menghasilkan salam saapan apabila user adalh John. Tidak akan tampil jika keduanya tidak tepenuhi */}
+          {user == "John" && <Greeting username={user} />}
           <Description text="Override value" />
         </div>
       );
