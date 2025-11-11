@@ -22,26 +22,43 @@
 
     <script type="text/babel">
       // React components, jsx syntax (bisa menggunakan javascript di html)
-      function Hello() {
-        return <h1>Hello World!</h1>;
+      function Hello(props) {
+        // props stands for properties
+        // penggunaan kurung kurawal, {} digunakan untuk menuliskan javascript expression
+        return (
+          <h1>
+            Hello {props.firstName} {props.lastName}
+          </h1>
+        );
       }
 
       // Greeting components
-      function Greeting() {
-        return <h2>Welcome to Learning JSX</h2>;
+      // props destructuring
+      // "Guest" adalah nilai default dari parameter username
+      function Greeting({ username = "Guest" } = props) {
+        return <h2>Welcome {username}</h2>;
       }
 
       // Description components
-      function Description() {
-        return <p>JSX allows you to write HTML in Javascript</p>;
+      // short hand props destructuring
+      // tidak perlu menambahkan "= props"
+      // langsung isikan saja " {}"
+      function Description({
+        text = "JSX allows you to write HTML in Javascript",
+      }) {
+        return <p>{text}</p>;
       }
+
       const container = document.getElementById("myDiv");
       const root = ReactDOM.createRoot(container);
+      // default value yang ditentukan bisa ditimpa ketika memanggil react component
+      // dengan argument yang baru
       root.render(
         <div>
-          <Hello />
+          <Hello firstName="John" lastName="Doe" />
+          <Hello firstName="Mark" lastName="Doe" />
           <Greeting />
-          <Description />
+          <Description text="Override value" />
         </div>
       );
     </script>
