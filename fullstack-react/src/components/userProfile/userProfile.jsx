@@ -1,6 +1,11 @@
 import styles from "./userProfile.module.css";
 
-export default function UserProfile({ firstName, lastName, skills } = props) {
+export default function UserProfile(props) {
+  const {
+    firstName = "First name not added",
+    lastName = "Last name not added",
+    skills = "Skills not added",
+  } = props;
   return (
     <>
       <section>

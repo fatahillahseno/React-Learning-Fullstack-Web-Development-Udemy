@@ -26,6 +26,8 @@ function App() {
         lastName={user2.lastName}
         skills={user2.skills}
       />
+
+      <UserProfile />
     </>
   );
 }
