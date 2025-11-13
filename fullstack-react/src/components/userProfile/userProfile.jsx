@@ -1,11 +1,8 @@
 import styles from "./userProfile.module.css";
+import LikeButton from "../likeButton/LikeButton.jsx";
 
 export default function UserProfile(props) {
-  const {
-    firstName = "First name not added",
-    lastName = "Last name not added",
-    skills = "Skills not added",
-  } = props;
+  const { firstName = "-", lastName = "-", skills = "-" } = props;
   return (
     <>
       <section>
@@ -14,6 +11,7 @@ export default function UserProfile(props) {
           <li>Last Name: {lastName} </li>
           <li>Skills: {skills} </li>
         </ul>
+        <LikeButton />
       </section>
     </>
   );
