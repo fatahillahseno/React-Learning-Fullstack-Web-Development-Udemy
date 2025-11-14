@@ -27,7 +27,6 @@ function App() {
         skills={user2.skills}
       />
 
-      <UserProfile />
     </>
   );
 }
