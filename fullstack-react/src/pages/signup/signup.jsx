@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
@@ -23,10 +24,10 @@ export default function Signup() {
             <Input className="mb-4" type="text" placeholder="First Name"/>
             <Input className="mb-4" type="text" placeholder="Last Name"/>
             <Input className="mb-4" type="email" placeholder="Email"/>
-            <Input className="mb-4" type="password" placeholder="Password"/>
+            <Input type="password" placeholder="Password"/>
           </CardContent>
           <CardFooter className= "flex flex-row justify-between">
-            <p>Already have an account? {" "}
+            <p  className="basis-1/2">Already have an account? {" "}
               <Link to="/" className="hover:text-blue-500">Login Here</Link>
               </p> 
             <Button>Signup</Button> 
