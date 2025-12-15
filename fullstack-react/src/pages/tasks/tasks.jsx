@@ -29,7 +29,9 @@ export default function Tasks() {
 
             {/* Filter Bar */}
             <FilterBar />
-            <Task />
+            <Task priority="low" />
+            <Task priority="normal" />
+            <Task priority="high" />
           </div>
         </div>
       </section>
