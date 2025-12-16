@@ -8,7 +8,7 @@ export function TaskSideBar() {
   return (
     <section className={`fixed right-4 top-4 ${styles.sideBarHeight}`}>
       <Card className="flex flex-col h-full w-full p-6 justify-between">
-        <UserProfile />
+        <UserProfile firstName="Senoooo" />
         <CreateTaskForm />
         <Logout />
       </Card>
