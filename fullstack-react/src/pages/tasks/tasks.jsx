@@ -1,6 +1,8 @@
 import { TasksCounter } from "@/components/tasksCounter/tasksCounter";
 import { FilterBar } from "@/components/filterBar/filterBar";
 import { Task } from "@/components/task/task";
+import { TaskSideBar } from "@/components/taskSideBar/taskSideBar";
+
 export default function Tasks() {
   return (
     <section className="flex flex-row w-full p-4 gap-8">
@@ -30,13 +32,11 @@ export default function Tasks() {
             {/* Filter Bar */}
             <FilterBar />
             <Task priority="low" />
-            <Task priority="normal" />
-            <Task priority="high" />
           </div>
         </div>
       </section>
-      <section className="flex basis-1/3 bg-red-300">
-        Create Task Section
+      <section className="flex basis-1/3">
+        <TaskSideBar />
       </section>
     </section>
   );
