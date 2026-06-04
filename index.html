@@ -28,6 +28,14 @@
       return <h1>Hello World</h1>
     };
 
+    function Greeting(){
+      return <h2>Welcome to Learning JSX</h2>
+    }
+
+    function Description(){
+      return <p>JSX allows developer to write HTML in Javascript</p>
+    }
+
     // ambil element yang akan digunakan
     const container = document.getElementById("mydiv");
 
@@ -35,7 +43,13 @@
     const root = ReactDOM.createRoot(container);
 
     // render react document di browser
-    root.render(<Hello />);
+    root.render(
+      <div>
+        <Hello />
+        <Greeting />  
+        <Description />
+      </div>
+    );
   </script>
 
 </body>
