@@ -14,7 +14,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- library babel untuk membaca dan memahami JSX code ke Javascript-->
 
-</head>
+</head> 
 <body>
   <div id="mydiv"></div>
   <h2>Another Heading</h2>
@@ -24,16 +24,21 @@
   <!-- type di-set text/babel agar babel bisa memahami JSX elements dan mengkonversinya menjadi javascript yang valid -->
   <script type="text/babel">
     // component 
-    function Hello(){
-      return <h1>Hello World</h1>
+    function Hello(props){
+      console.log(props);
+      return (
+        <h1>
+          Hello {props.firstName} {props.lastName}
+        </h1>
+      )
     };
 
-    function Greeting(){
-      return <h2>Welcome to Learning JSX</h2>
+    function Greeting({nama ="Guest"}){
+      return <h2>Welcome {nama}</h2>
     }
 
-    function Description(){
-      return <p>JSX allows developer to write HTML in Javascript</p>
+    function Description({text="JSX allows developer to write HTML in Javascript"}){
+      return <p>{text}</p>
     }
 
     // ambil element yang akan digunakan
@@ -45,8 +50,10 @@
     // render react document di browser
     root.render(
       <div>
-        <Hello />
+        <Hello firstName="Seno" lastName="Fatahillah"/>
+        <Hello firstName="Satria" lastName="Bima"/>  
         <Greeting />  
+        <Greeting nama="All Might"/>  
         <Description />
       </div>
     );
