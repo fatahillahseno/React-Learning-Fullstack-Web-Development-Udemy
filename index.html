@@ -28,7 +28,8 @@
       console.log(props);
       return (
         <h1>
-          Hello {props.firstName} {props.lastName}
+          Hello {props.firstName} {props.lastName}! You are {" "}
+          {new Date().getFullYear() - parseInt(props.birthYear)} 
         </h1>
       )
     };
@@ -47,13 +48,22 @@
     // memberitahu bahwa ini adalah Root untuk digunakan react
     const root = ReactDOM.createRoot(container);
 
+    // misalkan kita ada user All Might
+    let user = "All ight";
+
     // render react document di browser
     root.render(
       <div>
         <Hello firstName="Seno" lastName="Fatahillah"/>
-        <Hello firstName="Satria" lastName="Bima"/>  
-        <Greeting />  
-        <Greeting nama="All Might"/>  
+        <Hello firstName="Satria" lastName="Bima" birthYear="1998"/>  
+        
+        // memberitahukan jika user All Might login, maka render Greeting dengan properti nama All Might
+        // jika tidak render component dengan nilai default yang ada
+        {user == "All Might" ? <Greeting nama="All Might"/> : <Greeting />} 
+        
+        // jika user All Might Login, maka tampilkan komponent Greeting dengan properti nama All Might
+        // jika All Might tidak login, makan jangan tampilkan apapun
+        {user == "All Might"  && <Greeting nama="All Might"/>}
         <Description />
       </div>
     );
